@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">📦 Ürün Yönetimi</h2>
+
+  <!-- Ürün Ekleme Formu -->
+    <form (ngSubmit)="addProduct()" #productForm="ngForm" class="mb-4">
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Ürün Adı" [(ngModel)]="newProduct.name" name="name" required>
+    </div>
+
+    <div class="mb-3">
+      <input type="number" class="form-control" placeholder="Fiyat" [(ngModel)]="newProduct.price" name="price" required>
+    </div>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Kategori" [(ngModel)]="newProduct.category" name="category">
+    </div>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Açıklama" [(ngModel)]="newProduct.description" name="description">
+    </div>
+
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Görsel URL" [(ngModel)]="newProduct.imageUrl" name="imageUrl">
+    </div>
+
+    <div class="mb-3">
+      <select class="form-select" [(ngModel)]="newProduct.gender" name="gender">
+        <option value="" disabled selected>Cinsiyet Seç</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+        <option value="Unisex">Unisex</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <input type="number" class="form-control" placeholder="Stok Adedi" [(ngModel)]="newProduct.stock" name="stock">
+    </div>
+
+    <button class="btn btn-success">Ekle</button>
+  </form>
+
+  <!-- Ürün Listesi -->
+  <h4>🗑 Tüm Ürünler</h4>
+  <table class="table table-bordered table-hover mt-3">
+    <thead>
+      <tr>
+        <th>Ad</th>
+        <th>Fiyat</th>
+        <th>Kategori</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>${{ product.price }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Sil</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

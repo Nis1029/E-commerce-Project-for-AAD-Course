@@ -1,0 +1,9 @@
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.clickable:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,17 @@
+.category-bar {
+  background-color: #65696d;
+}
+
+.category-bar a:hover {
+  text-decoration: underline;
+}
+
+.submenu {
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  z-index: 100;
+}
+.category-group span {
+  cursor: default;
+}

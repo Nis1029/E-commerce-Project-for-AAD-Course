@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h3 class="mb-4">User Management</h3>
+
+  <div *ngIf="users.length === 0" class="alert alert-info">
+    No users found.
+  </div>
+
+  <div class="list-group">
+    <div *ngFor="let user of users" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong>{{ user.email }}</strong>
+        <div class="text-muted small">Role: {{ user.role }}</div>
+      </div>
+
+      <div>
+        <span
+          class="badge me-3"
+          [ngClass]="user.isBanned ? 'bg-danger' : 'bg-success'">
+          {{ user.isBanned ? 'Banned' : 'Active' }}
+        </span>
+
+        <button class="btn btn-outline-warning btn-sm" (click)="toggleBan(user)">
+          {{ user.isBanned ? 'Unban' : 'Ban' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

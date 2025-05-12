@@ -1,0 +1,15 @@
+.sidebar {
+  height: 100vh;
+  position: fixed;
+}
+.flex-grow-1 {
+  margin-left: 220px;
+}
+.nav-link {
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+.nav-link:hover {
+  background-color: #343a40;
+  border-radius: 8px;
+}

@@ -1,0 +1,24 @@
+<div class="category-bar px-3 py-2">
+  <div class="container d-flex justify-content-center flex-wrap gap-4">
+    <div class="position-relative"
+         *ngFor="let category of categories"
+         (mouseenter)="showSubMenu(category)"
+         (mouseleave)="hideSubMenu()">
+
+      <span class="text-white fw-semibold cursor-pointer">
+        {{ category }}
+      </span>
+
+      <div *ngIf="activeCategory === category && getSubcategories(category).length"
+           class="submenu bg-white position-absolute p-3 rounded shadow">
+           <a *ngFor="let sub of getSubcategories(category)"
+           class="d-block text-dark mb-2 text-decoration-none"
+           [routerLink]="['/products', formatCategory(sub)]"
+           (click)="hideSubMenu()">
+          {{ sub }}
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

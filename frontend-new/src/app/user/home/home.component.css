@@ -1,0 +1,17 @@
+.hero-section {
+  position: relative;
+  text-align: left;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.trend-card {
+  width: 180px;
+}

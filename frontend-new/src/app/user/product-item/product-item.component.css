@@ -1,0 +1,25 @@
+.product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  transition: opacity 0.3s ease;
+  display: block;
+}
+
+.secondary-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-image-wrapper:hover .secondary-img {
+  opacity: 1;
+}
+
+.product-image-wrapper:hover .primary-img {
+  opacity: 0;
+}

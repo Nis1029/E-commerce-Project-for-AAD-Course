@@ -1,0 +1,63 @@
+<div class="container py-5">
+  <h2 class="mb-4 fw-bold text-center">🛠️ Manage Your Products</h2>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border text-secondary"></div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger text-center">{{ error }}</div>
+
+  <div *ngIf="!loading && products.length === 0" class="alert alert-info text-center">
+    No products found.
+  </div>
+
+  <div *ngIf="products.length > 0" class="table-responsive">
+    <table class="table table-hover table-bordered align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Price ($)</th>
+          <th>Stock</th>
+          <th>Update Price</th>
+          <th>Update Stock</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.stock }}</td>
+
+          <!-- Price Update -->
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <input type="number" class="form-control form-control-sm"
+                     [(ngModel)]="priceUpdates[product.id]"
+                     placeholder="New price" style="width: 100px;">
+              <button class="btn btn-sm btn-outline-warning"
+                      (click)="updatePrice(product)">Update</button>
+            </div>
+          </td>
+
+          <!-- Stock Update -->
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <input type="number" class="form-control form-control-sm"
+                     [(ngModel)]="stockUpdates[product.id]"
+                     placeholder="New stock" style="width: 100px;">
+              <button class="btn btn-sm btn-outline-primary"
+                      (click)="updateStock(product)">Update</button>
+            </div>
+          </td>
+
+          <!-- Delete -->
+          <td>
+            <button class="btn btn-sm btn-outline-danger"
+                    (click)="deleteProduct(product.id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

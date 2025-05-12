@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center align-items-start flex-column pt-3" style="min-height: 100vh; background-color: #f8f9fa;">
+  <h2 class="mb-5 fw-bold text-dark text-center w-100">🛍️ Seller Dashboard</h2>
+
+  <div class="row justify-content-center w-75 mx-auto">
+    <!-- Add Product -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100 clickable" (click)="navigateTo('add-product')">
+        <div class="card-body text-center">
+          <h3 class="text-success">➕ Add Product</h3>
+          <p>Create a new product and list it for sale.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manage Products -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100 clickable" (click)="navigateTo('edit-product')">
+        <div class="card-body text-center">
+          <h3 class="text-primary">📦 Manage Products</h3>
+          <p>View, update or delete your existing products.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

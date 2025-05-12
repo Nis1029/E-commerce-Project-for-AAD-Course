@@ -1,0 +1,69 @@
+<div class="d-flex" style="min-height: 100vh;">
+
+  <!-- Sol Menü -->
+  <nav class="bg-dark text-white p-4" style="width: 250px;">
+    <h4 class="mb-4">Admin Panel</h4>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-3">
+        <a routerLink="/admin/products" class="nav-link text-white">
+          📦 Product Management
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a routerLink="/admin/orders" class="nav-link text-white">
+          🧾 Order Management
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a routerLink="/admin/users" class="nav-link text-white">
+          👤 User Management
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sağ Ana İçerik -->
+  <main class="flex-fill p-4">
+    <h2 class="mb-4">📊 Dashboard</h2>
+
+    <div class="row mb-4">
+      <div class="col-md-3">
+        <div class="card text-white bg-success">
+          <div class="card-body text-center">
+            <h4>${{ totalRevenue }}</h4>
+            <p>Revenue</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-white bg-warning">
+          <div class="card-body text-center">
+            <h4>{{ totalOrders }}</h4>
+            <p>Sales</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-white bg-primary">
+          <div class="card-body text-center">
+            <h4>{{ totalUsers }}</h4>
+            <p>Customers</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-white bg-secondary">
+          <div class="card-body text-center">
+            <h4>{{ totalProducts }}</h4>
+            <p>Products</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </main>
+</div>
